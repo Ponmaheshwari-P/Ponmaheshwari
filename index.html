@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponmaheshwari P | Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI;scroll-behavior:smooth;}
+body{background:#000;color:white;}
+
+/* NAVBAR */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;border-bottom:1px solid #00ffff;}
+nav h1{color:#00ffff;text-shadow:0 0 15px #00ffff;}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav a{color:white;text-decoration:none;transition:0.3s;}
+nav a:hover{color:#00ffff;text-shadow:0 0 10px #00ffff;}
+
+/* HERO */
+.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hero h2{font-size:55px;color:#00ffff;text-shadow:0 0 20px #00ffff;}
+.hero p{margin-top:10px;font-size:20px;color:#ccc;}
+.profile{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+object-position:top;
+border:4px solid #00ffff;
+box-shadow:0 0 20px #00ffff;
+}
+
+/* SECTIONS */
+section{padding:80px 10%;text-align:center;}
+section h2{font-size:35px;margin-bottom:40px;color:#00ffff;text-shadow:0 0 10px #00ffff;}
+
+/* ABOUT */
+.about-text{max-width:900px;margin:auto;font-size:18px;line-height:1.8;color:#ccc;}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
+
+/* CARDS */
+.card{border:1px solid #00ffff;padding:25px;border-radius:10px;transition:0.3s;}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 20px #00ffff;}
+
+/* CERTIFICATE LINK */
+.cert-link{cursor:pointer;color:#00ffff;text-shadow:0 0 10px #00ffff;transition:0.3s;}
+.cert-link:hover{color:#ff00ff;text-shadow:0 0 20px #ff00ff;}
+
+/* CONTACT */
+.contact-links{margin-bottom:25px;font-size:18px;}
+.contact-links a{color:#00ffff;text-decoration:none;}
+.contact input,.contact textarea{width:100%;padding:12px;margin-top:15px;background:#111;border:1px solid #00ffff;color:white;border-radius:5px;}
+.contact button{margin-top:20px;padding:12px 30px;border:none;background:#00ffff;color:black;border-radius:30px;cursor:pointer;box-shadow:0 0 15px #00ffff;}
+
+/* CERTIFICATE POPUP */
+#cert-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;justify-content:center;align-items:center;z-index:1000;overflow:auto;}
+#cert-popup-img{max-width:90%;max-height:90%;box-shadow:0 0 30px #00ffff;border-radius:10px;}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;border-top:1px solid #00ffff;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h1>Ponmaheshwari</h1>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#platforms">Coding</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h2>Hello I'm Ponmaheshwari P</h2>
+<p>Computer Science Student | Problem Solver | Developer</p><br>
+<img src="profile.jpeg" class="profile">
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+<p class="about-text">
+I am Ponmaheshwari P, a Computer Science student passionate about programming, data structures, and software development. 
+I actively practice coding on platforms like LeetCode, CodeChef, and GeeksforGeeks to improve my problem-solving skills and algorithm knowledge. 
+
+I enjoy building real-world projects and exploring modern web and software technologies. 
+My goal is to become a skilled software developer and contribute to innovative solutions in technology. 
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card"><h3>C Programming</h3></div>
+<div class="card"><h3>C++</h3></div>
+<div class="card"><h3>Data Structures</h3></div>
+<div class="card"><h3>Web Development</h3></div>
+</div>
+</section>
+
+<!-- CODING PLATFORMS -->
+<section id="platforms">
+<h2>Coding Platforms</h2>
+<div class="grid">
+<div class="card"><h3>LeetCode</h3><p>Practicing algorithms and coding problems.</p></div>
+<div class="card"><h3>CodeChef</h3><p>Participating in competitive programming contests.</p></div>
+<div class="card"><h3>GeeksforGeeks</h3><p>Learning data structures and problem solving.</p></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Hospital Management System</h3>
+<p>Mini project to manage doctors, patients, and appointments.</p>
+</div>
+</section>
+
+<section id="certifications">
+<h2>Certifications</h2>
+<div class="grid">
+<div class="card">
+<h3 class="cert-link" onclick="openCert('c certification.jpeg')">C Programming Certification</h3>
+<p>Click the title to view the certificate.</p>
+</div>
+</div>
+
+<!-- Popup Lightbox -->
+<div id="cert-popup-overlay" onclick="closeCert()">
+<img id="cert-popup-img" src="c certification.jpeg" alt="Certificate">
+</div>
+<br>
+<div class="grid">
+<div class="card">
+<h3 class="cert-link" onclick="openCert('certification.jpeg')">C Programming Basics Certification</h3>
+<p>Click the title to view the certificate.</p>
+</div>
+</div>
+
+<!-- Popup Lightbox -->
+<div id="cert-popup-overlay" onclick="closeCert()">
+<img id="cert-popup-img" src="certification.jpeg" alt="Certificate">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="contact">
+<div class="contact-links">
+<p>📧 Email: <a href="mailto:ponmaheshwari05@gmail.com">ponmaheshwari05@gmail.com</a></p>
+<p>💼 LinkedIn: <a href="https://www.linkedin.com/in/ponmaheshwari-p-455448396?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin.com/in/ponmaheshwari-linkedin</a></p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Ponmaheshwari P | Portfolio</p>
+</footer>
+
+<script>
+function openCert(src){
+  document.getElementById('cert-popup-img').src = src;
+  document.getElementById('cert-popup-overlay').style.display = 'flex';
+}
+function closeCert(){
+  document.getElementById('cert-popup-overlay').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
